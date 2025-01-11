@@ -1,0 +1,55 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Evviva Montessori - Guiding Young Minds">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="font-body antialiased">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <div class="flex items-center">
+            <a href="/" class="flex items-center">
+              <div class="h-16 w-auto">
+                <img 
+                  src="/images/logo.png"
+                  alt="Evviva Montessori Logo" 
+                  class="h-full w-auto object-contain"
+                  style="max-width: 200px;"
+                />
+              </div>
+            </a>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <a href="/" class="text-gray-700 hover:text-[#7C9A92] transition-colors">Home</a>
+              <a href="/about" class="text-gray-700 hover:text-[#7C9A92] transition-colors">About</a>
+              <a href="/programs" class="text-gray-700 hover:text-[#7C9A92] transition-colors">Programs</a>
+              <a href="/contact-us" class="text-gray-700 hover:text-[#7C9A92] transition-colors">Contact Us</a>
+              <a href="/contact-us" class="bg-[#7C9A92] text-white px-6 py-3 rounded-full hover:bg-[#5C7A72] transition-all transform hover:scale-105 shadow-md hover:shadow-lg">
+                Enroll Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <slot />
+    <footer class="bg-gray-50">
+      <!-- Footer content remains the same -->
+    </footer>
+  </body>
+</html>

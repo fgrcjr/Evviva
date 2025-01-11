@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Us - Evviva Montessori">
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-nature-sand to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span class="text-primary font-medium mb-4 block">Compassion</span>
+            <h1 class="text-5xl font-display font-bold mb-6">
+              Meet Our Dedicated and Loving Staff
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+              Our experienced team is committed to nurturing your child's growth and development. With a focus on safety and creativity, we ensure a supportive environment for every child.
+            </p>
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                  <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </span>
+                <span class="text-gray-700">Trained professionals passionate about early childhood education.</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                  <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </span>
+                <span class="text-gray-700">Personalized attention for each child's unique needs.</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                  <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </span>
+                <span class="text-gray-700">Creating a joyful and enriching learning experience daily.</span>
+              </li>
+            </ul>
+            <div class="flex gap-4">
+              <a href="/programs" class="inline-block px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-full">
+                Learn More
+              </a>
+              <a href="/contact-us" class="inline-block px-8 py-3 bg-primary text-white hover:bg-primary-dark transition-colors rounded-full">
+                Join Us
+              </a>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute inset-0 bg-primary/10 rounded-[2.5rem] rotate-6 transform hover:rotate-0 transition-transform duration-500"></div>
+            <img 
+              src="/about-hero.jpg" 
+              alt="Our dedicated teaching staff" 
+              class="rounded-[2.5rem] shadow-xl relative z-10 transform hover:scale-105 transition-all duration-500 object-cover w-full aspect-[4/3]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="relative">
+            <div class="absolute inset-0 bg-primary/10 rounded-[2.5rem] rotate-6 transform hover:rotate-0 transition-transform duration-500"></div>
+            <img 
+              src="/nurture.jpg" 
+              alt="Children engaged in learning activities" 
+              class="rounded-[2.5rem] shadow-xl relative z-10 transform hover:scale-105 transition-all duration-500 object-cover w-full aspect-[4/3]"
+            />
+          </div>
+          <div>
+            <span class="text-primary font-medium mb-4 block">Nurture</span>
+            <h2 class="text-4xl font-display font-bold mb-6">
+              Unlock Your Child's Potential with Us
+            </h2>
+            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+              Enrolling your child in our daycare fosters essential social skills and friendships. With personalized attention, each child receives the support they need to thrive.
+            </p>
+            <div class="grid grid-cols-2 gap-8 mb-8">
+              <div>
+                <p class="text-4xl font-display font-bold text-primary mb-2">95%</p>
+                <p class="text-gray-600">Improved social skills and emotional development.</p>
+              </div>
+              <div>
+                <p class="text-4xl font-display font-bold text-primary mb-2">90%</p>
+                <p class="text-gray-600">Individualized care tailored to each child's needs.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <a href="/programs" class="inline-block px-8 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-full">
+                Learn More
+              </a>
+              <a href="/contact-us" class="inline-block px-8 py-3 bg-primary text-white hover:bg-primary-dark transition-colors rounded-full">
+                Join Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
