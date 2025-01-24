@@ -105,8 +105,8 @@ export default function Contact() {
           </div>
   
           {/* Form Section */}
-          <div className="bg-white p-10 rounded-lg shadow-md border border-sage-200 animate-on-scroll max-w-lg mx-auto md:max-w-full">
-            <h2 className="text-2xl font-bold text-sage-800 mb-6 text-center md:text-left">
+          <div className="bg-white p-10 rounded-lg shadow-md border border-sage-200 animate-on-scroll w-full md:max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-sage-800 mb-6 text-center md:text-left">
               Schedule a Tour
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -115,20 +115,20 @@ export default function Contact() {
   
               {/* Full Name */}
               <div className="space-y-1">
-                <Label htmlFor="name" className="font-medium text-sage-800">
+                <Label htmlFor="name" className="text-xl font-medium text-sage-800">
                   Full Name
                 </Label>
                 <Input
                   id="name"
                   name="name"
                   required
-                  className="w-full py-3 px-4 text-base border border-gray-300 rounded-lg"
+                  className="w-full py-3 px-4 text-lg border border-gray-300 rounded-lg"
                 />
               </div>
   
               {/* Email Address */}
               <div className="space-y-1">
-                <Label htmlFor="email" className="font-medium text-sage-800">
+                <Label htmlFor="email" className="text-xl font-medium text-sage-800">
                   Email Address
                 </Label>
                 <Input
@@ -136,13 +136,13 @@ export default function Contact() {
                   name="email"
                   type="email"
                   required
-                  className="w-full py-3 px-4 text-base border border-gray-300 rounded-lg"
+                  className="w-full py-3 px-4 text-lg border border-gray-300 rounded-lg"
                 />
               </div>
   
               {/* Phone Number */}
               <div className="space-y-1">
-                <Label htmlFor="phone" className="font-medium text-sage-800">
+                <Label htmlFor="phone" className="text-xl font-medium text-sage-800">
                   Phone Number
                 </Label>
                 <Input
@@ -150,17 +150,17 @@ export default function Contact() {
                   name="phone"
                   type="tel"
                   required
-                  className="w-full py-3 px-4 text-base border border-gray-300 rounded-lg"
+                  className="w-full py-3 px-4 text-lg border border-gray-300 rounded-lg"
                 />
               </div>
   
               {/* Child's Age */}
               <div className="space-y-1">
-                <Label htmlFor="child_age_range" className="font-medium text-sage-800">
+                <Label htmlFor="child_age_range" className="text-xl font-medium text-sage-800">
                   Child&apos;s Age
                 </Label>
                 <Select name="child_age_range" required>
-                  <SelectTrigger className="w-full py-3 px-4 text-base border border-gray-300 rounded-lg">
+                  <SelectTrigger className="w-full py-3 px-4 text-lg border border-gray-300 rounded-lg">
                     <SelectValue placeholder="Select an item" />
                     <SelectContent>
                       {Object.entries(ageRange).map(([key, val]) => (
@@ -173,22 +173,22 @@ export default function Contact() {
   
               {/* Additional Information */}
               <div className="space-y-1">
-                <Label htmlFor="message" className="font-medium text-sage-800">
+                <Label htmlFor="message" className="text-xl font-medium text-sage-800">
                   Additional Information
                 </Label>
                 <Textarea
                   id="message"
                   name="message"
-                  rows={4}
+                  rows={5}
                   placeholder="Please share any specific questions or preferences for the tour."
-                  className="w-full py-3 px-4 text-base border border-gray-300 rounded-lg"
+                  className="w-full py-3 px-4 text-lg border border-gray-300 rounded-lg"
                 />
               </div>
   
               {/* Submit Button */}
               <Button
                 type="submit"
-                className="w-full py-3 bg-nature-600 hover:bg-nature-700 text-white font-semibold text-lg rounded-lg"
+                className="w-full py-3 bg-nature-600 hover:bg-nature-700 text-white font-semibold text-xl rounded-lg"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Request Tour"}
@@ -198,5 +198,6 @@ export default function Contact() {
         </div>
       </div>
     </div>
-  );  
+  );
+  
 }
