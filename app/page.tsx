@@ -1,8 +1,8 @@
 "use client";
 
-import { useGsapAnimation } from '@/lib/gsap';
-import Image from 'next/image';
-import Link from 'next/link';
+import { useGsapAnimation } from "@/lib/gsap";
+import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -19,7 +19,9 @@ export default function Home() {
                 Guiding Young Minds
               </h1>
               <p className="text-xl text-sage-600">
-                At our daycare, we believe every child deserves a supportive and enriching environment. Join us in fostering curiosity and creativity in your child's early years.
+                At our daycare, we believe every child deserves a supportive and
+                enriching environment. Join us in fostering curiosity and
+                creativity in your child&apos;s early years.
               </p>
               <div className="flex gap-4">
                 <Link href="/contact">
@@ -51,7 +53,8 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-sage-800 mb-16">
-            Discover Our Daycare's Exceptional Features for Your Child's Growth and Development
+            Discover Our Daycare&apos;s Exceptional Features for Your
+            Child&apos;s Growth and Development
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="animate-on-scroll text-center">
@@ -63,10 +66,12 @@ export default function Home() {
                 className="rounded-lg shadow-md mb-6"
               />
               <h3 className="text-xl font-semibold text-sage-800 mb-4">
-                Experience a Safe, Accessible, and Engaging Learning Environment for Every Child
+                Experience a Safe, Accessible, and Engaging Learning Environment
+                for Every Child
               </h3>
               <p className="text-sage-600 mb-4">
-                Our daycare is fully ADA compliant, ensuring a welcoming space for all.
+                Our daycare is fully ADA compliant, ensuring a welcoming space
+                for all.
               </p>
               <Link href="/about">
                 <Button variant="link" className="text-nature-600">
@@ -86,7 +91,8 @@ export default function Home() {
                 Navigate Our User-Friendly Website with Ease and Convenience
               </h3>
               <p className="text-sage-600 mb-4">
-                Our mobile-responsive design allows parents to access information anytime, anywhere.
+                Our mobile-responsive design allows parents to access
+                information anytime, anywhere.
               </p>
               <Link href="/contact">
                 <Button variant="link" className="text-nature-600">
@@ -106,7 +112,8 @@ export default function Home() {
                 Engaging Activities That Spark Curiosity and Learning
               </h3>
               <p className="text-sage-600 mb-4">
-                Our attractive visuals create an inviting atmosphere that sparks children's curiosity.
+                Our attractive visuals create an inviting atmosphere that sparks
+                children&apos;s curiosity.
               </p>
               <Link href="/programs">
                 <Button variant="link" className="text-nature-600">

@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
+import Link from "next/link";
+import Image from "next/image";
+import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -20,19 +20,65 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">Programs</h4>
             <ul className="space-y-2">
-              <li><Link href="/programs#infants" className="text-gray-600 hover:text-sage-600">Infants</Link></li>
-              <li><Link href="/programs#toddlers" className="text-gray-600 hover:text-sage-600">Toddlers</Link></li>
-              <li><Link href="/programs#preschool" className="text-gray-600 hover:text-sage-600">Preschool</Link></li>
-              <li><Link href="/programs#school-age" className="text-gray-600 hover:text-sage-600">School Age</Link></li>
+              <li>
+                <Link
+                  href="/programs#infants"
+                  className="text-gray-600 hover:text-sage-600"
+                >
+                  Infants
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/programs#toddlers"
+                  className="text-gray-600 hover:text-sage-600"
+                >
+                  Toddlers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/programs#preschool"
+                  className="text-gray-600 hover:text-sage-600"
+                >
+                  Preschool
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/programs#school-age"
+                  className="text-gray-600 hover:text-sage-600"
+                >
+                  School Age
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-gray-600 hover:text-sage-600">About Us</Link></li>
-              <li><Link href="/contact" className="text-gray-600 hover:text-sage-600">Contact</Link></li>
-              <li><Link href="/faq" className="text-gray-600 hover:text-sage-600">FAQ</Link></li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-600 hover:text-sage-600"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-600 hover:text-sage-600"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="text-gray-600 hover:text-sage-600">
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -49,19 +95,39 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-600 hover:text-sage-600" aria-label="Facebook">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-sage-600"
+                aria-label="Facebook"
+              >
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-sage-600" aria-label="Instagram">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-sage-600"
+                aria-label="Instagram"
+              >
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-sage-600" aria-label="Twitter">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-sage-600"
+                aria-label="Twitter"
+              >
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-sage-600" aria-label="LinkedIn">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-sage-600"
+                aria-label="LinkedIn"
+              >
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-sage-600" aria-label="YouTube">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-sage-600"
+                aria-label="YouTube"
+              >
                 <Youtube className="h-6 w-6" />
               </a>
             </div>
@@ -70,7 +136,8 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-gray-200">
           <p className="text-center text-gray-600">
-            © {new Date().getFullYear()} Evviva Montessori. All rights reserved.
+            © {new Date().getFullYear()} Evviva Montessori. All rights
+            reserved.
           </p>
         </div>
       </div>

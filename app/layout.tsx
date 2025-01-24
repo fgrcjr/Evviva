@@ -1,19 +1,20 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Quicksand } from 'next/font/google';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Quicksand } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
-const quicksand = Quicksand({ 
-  subsets: ['latin'],
-  variable: '--font-quicksand',
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  variable: "--font-quicksand",
 });
 
 export const metadata: Metadata = {
-  title: 'Evviva - Guiding Young Minds',
-  description: 'A nurturing Montessori environment fostering emotional, intellectual, and social growth.',
+  title: "Evviva - Guiding Young Minds",
+  description:
+    "A nurturing Montessori environment fostering emotional, intellectual, and social growth.",
 };
 
 export default function RootLayout({

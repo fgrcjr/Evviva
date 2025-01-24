@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,21 +16,23 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { href: '/about', label: 'About Us' },
-    { href: '/programs', label: 'Programs' },
-    { href: '/contact', label: 'Contact Us' },
-    { href: '/faq', label: 'FAQs' },
+    { href: "/about", label: "About Us" },
+    { href: "/programs", label: "Programs" },
+    { href: "/contact", label: "Contact Us" },
+    { href: "/faq", label: "FAQs" },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center space-x-2">
@@ -50,7 +52,9 @@ const Navigation = () => {
                 key={link.href}
                 href={link.href}
                 className={`text-lg transition-colors hover:text-sage-600 ${
-                  pathname === link.href ? 'text-sage-700 font-semibold' : 'text-gray-600'
+                  pathname === link.href
+                    ? "text-sage-700 font-semibold"
+                    : "text-gray-600"
                 }`}
               >
                 {link.label}
@@ -87,8 +91,8 @@ const Navigation = () => {
                   href={link.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     pathname === link.href
-                      ? 'text-sage-700 bg-sage-50'
-                      : 'text-gray-600 hover:text-sage-600 hover:bg-sage-50'
+                      ? "text-sage-700 bg-sage-50"
+                      : "text-gray-600 hover:text-sage-600 hover:bg-sage-50"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
