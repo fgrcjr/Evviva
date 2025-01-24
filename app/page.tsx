@@ -49,61 +49,62 @@ export default function Home() {
         </div>
       </section>
   
-      {/* Features Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-sage-800 mb-12">
-            Discover Our Daycare&apos;s Exceptional Features
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-            {[
-              {
-                src: "/feature-1.jpg",
-                alt: "Safe learning environment",
-                title: "Safe, Accessible, and Engaging Learning",
-                description: "Our daycare is fully ADA compliant, ensuring a welcoming space for all.",
-                link: "/about",
-                linkText: "Learn More →",
-              },
-              {
-                src: "/feature-2.jpg",
-                alt: "User-friendly experience",
-                title: "Easy-to-Use Website for Parents",
-                description: "Our mobile-responsive design allows parents to access information anytime, anywhere.",
-                link: "/contact",
-                linkText: "Sign Up →",
-              },
-              {
-                src: "/feature-3.jpg",
-                alt: "Creative activities",
-                title: "Engaging Activities for Learning",
-                description: "Our attractive visuals create an inviting atmosphere that sparks curiosity.",
-                link: "/programs",
-                linkText: "Explore →",
-              },
-            ].map((feature, index) => (
-              <div key={index} className="animate-on-scroll text-center">
-                <Image
-                  src={feature.src}
-                  alt={feature.alt}
-                  width={400}
-                  height={300}
-                  className="rounded-lg shadow-md mb-6 w-full max-w-[300px] mx-auto"
-                />
-                <h3 className="text-lg sm:text-xl font-semibold text-sage-800 mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-sage-600 mb-4">{feature.description}</p>
-                <Link href={feature.link}>
-                  <Button variant="link" className="text-nature-600">
-                    {feature.linkText}
-                  </Button>
-                </Link>
-              </div>
-            ))}
+    {/* Features Section */}
+  <section className="py-16 bg-white">
+    <div className="container mx-auto px-4">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center text-sage-800 mb-12">
+        Discover Our Daycare&apos;s Exceptional Features
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+        {[ 
+          {
+            src: "/feature-1.jpg",
+            alt: "Safe learning environment",
+            title: "Safe, Accessible, and Engaging Learning",
+            description: " Our experienced team is committed to nurturing your child's growth and development. With a focus on safety and creativity, we ensure a supportive environment for every child.",
+            link: "/about",
+            linkText: "Learn More →",
+          },
+          {
+            src: "/feature-2.jpg",
+            alt: "User-friendly experience",
+            title: "Personalized attention for each child's needs",
+            description: "Trained professionals passionate about early childhood education.",
+            link: "/contact",
+            linkText: "Sign Up →",
+          },
+          {
+            src: "/feature-3.jpg",
+            alt: "Creative activities",
+            title: "Engaging Activities for Learning",
+            description: "Our attractive visuals create an inviting atmosphere that sparks curiosity.",
+            link: "/programs",
+            linkText: "Explore →",
+          },
+        ].map((feature, index) => (
+          <div key={index} className="animate-on-scroll text-center flex flex-col items-center">
+            <Image
+              src={feature.src}
+              alt={feature.alt}
+              width={400}   
+              height={200}  
+              className="rounded-lg shadow-md mb-6 w-[400px] h-[200px] object-cover mx-auto"
+            />
+            <h3 className="text-lg sm:text-xl font-semibold text-sage-800 mb-4">
+              {feature.title}
+            </h3>
+            <p className="text-sage-600 mb-4">{feature.description}</p>
+            <Link href={feature.link}>
+              <Button variant="link" className="text-nature-600">
+                {feature.linkText}
+              </Button>
+            </Link>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </section>
+
     </div>
   );
   
