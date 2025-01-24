@@ -43,6 +43,8 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sage-50 to-white pt-24">
       <div className="container mx-auto px-4 py-16">
+        
+        {/* Header Section */}
         <div className="text-center mb-16 animate-on-scroll">
           <h1 className="text-4xl md:text-5xl font-bold text-sage-800 mb-4">
             Contact Us
@@ -52,32 +54,35 @@ export default function Contact() {
             questions about our programs.
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div className="space-y-8 animate-on-scroll">
+  
+        {/* Contact Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          
+          {/* Contact Info & Image */}
+          <div className="space-y-8 animate-on-scroll text-center md:text-left">
+            
+            {/* Image */}
             <Image
               src="/contact-image.jpg"
               alt="Our Facility"
               width={600}
               height={400}
-              className="rounded-lg shadow-lg mb-8"
+              className="rounded-lg shadow-lg w-full h-auto mb-8"
             />
-
-            <div className="flex items-start gap-4">
+  
+            {/* Address */}
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
               <MapPin className="h-6 w-6 text-nature-600 mt-1" />
               <div>
                 <h2 className="text-xl font-semibold text-sage-800 mb-2">
                   Visit Us
                 </h2>
-                <p className="text-sage-600">
-                  123 Education Lane
-                  <br />
-                  Anytown, ST 12345
-                </p>
+                <p className="text-sage-600">123 Education Lane<br />Anytown, ST 12345</p>
               </div>
             </div>
-
-            <div className="flex items-start gap-4">
+  
+            {/* Phone */}
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
               <Phone className="h-6 w-6 text-nature-600 mt-1" />
               <div>
                 <h2 className="text-xl font-semibold text-sage-800 mb-2">
@@ -86,8 +91,9 @@ export default function Contact() {
                 <p className="text-sage-600">(555) 123-4567</p>
               </div>
             </div>
-
-            <div className="flex items-start gap-4">
+  
+            {/* Email */}
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
               <Mail className="h-6 w-6 text-nature-600 mt-1" />
               <div>
                 <h2 className="text-xl font-semibold text-sage-800 mb-2">
@@ -97,66 +103,92 @@ export default function Contact() {
               </div>
             </div>
           </div>
-
-          <div className="bg-white p-8 rounded-lg shadow-sm border border-sage-100 animate-on-scroll">
-            <h2 className="text-2xl font-bold text-sage-800 mb-6">
+  
+          {/* Form Section */}
+          <div className="bg-white p-10 rounded-lg shadow-md border border-sage-200 animate-on-scroll max-w-lg mx-auto md:max-w-full">
+            <h2 className="text-2xl font-bold text-sage-800 mb-6 text-center md:text-left">
               Schedule a Tour
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="hidden"
-                name="access_key"
-                value="YOUR-WEB3FORMS-ACCESS-KEY"
-              />
-              <input
-                type="hidden"
-                name="subject"
-                value="New Tour Request - Evviva Montessori"
-              />
-
-              <div className="space-y-2">
-                <Label htmlFor="name">Full Name</Label>
-                <Input id="name" name="name" required />
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-ACCESS-KEY" />
+              <input type="hidden" name="subject" value="New Tour Request - Evviva Montessori" />
+  
+              {/* Full Name */}
+              <div className="space-y-1">
+                <Label htmlFor="name" className="font-medium text-sage-800">
+                  Full Name
+                </Label>
+                <Input
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full py-3 px-4 text-base border border-gray-300 rounded-lg"
+                />
               </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email Address</Label>
-                <Input id="email" name="email" type="email" required />
+  
+              {/* Email Address */}
+              <div className="space-y-1">
+                <Label htmlFor="email" className="font-medium text-sage-800">
+                  Email Address
+                </Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  className="w-full py-3 px-4 text-base border border-gray-300 rounded-lg"
+                />
               </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number</Label>
-                <Input id="phone" name="phone" type="tel" required />
+  
+              {/* Phone Number */}
+              <div className="space-y-1">
+                <Label htmlFor="phone" className="font-medium text-sage-800">
+                  Phone Number
+                </Label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  className="w-full py-3 px-4 text-base border border-gray-300 rounded-lg"
+                />
               </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="child_age_range">Child&apos;s Age</Label>
+  
+              {/* Child's Age */}
+              <div className="space-y-1">
+                <Label htmlFor="child_age_range" className="font-medium text-sage-800">
+                  Child&apos;s Age
+                </Label>
                 <Select name="child_age_range" required>
-                  <SelectTrigger>
+                  <SelectTrigger className="w-full py-3 px-4 text-base border border-gray-300 rounded-lg">
                     <SelectValue placeholder="Select an item" />
                     <SelectContent>
                       {Object.entries(ageRange).map(([key, val]) => (
-                        <SelectItem key={key} value={key}>
-                          {val}
-                        </SelectItem>
+                        <SelectItem key={key} value={key}>{val}</SelectItem>
                       ))}
                     </SelectContent>
                   </SelectTrigger>
                 </Select>
               </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="message">Additional Information</Label>
+  
+              {/* Additional Information */}
+              <div className="space-y-1">
+                <Label htmlFor="message" className="font-medium text-sage-800">
+                  Additional Information
+                </Label>
                 <Textarea
                   id="message"
                   name="message"
+                  rows={4}
                   placeholder="Please share any specific questions or preferences for the tour."
+                  className="w-full py-3 px-4 text-base border border-gray-300 rounded-lg"
                 />
               </div>
-
+  
+              {/* Submit Button */}
               <Button
                 type="submit"
-                className="w-full bg-nature-600 hover:bg-nature-700"
+                className="w-full py-3 bg-nature-600 hover:bg-nature-700 text-white font-semibold text-lg rounded-lg"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Request Tour"}
@@ -166,5 +198,5 @@ export default function Contact() {
         </div>
       </div>
     </div>
-  );
+  );  
 }

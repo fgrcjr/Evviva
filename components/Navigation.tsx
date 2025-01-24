@@ -35,13 +35,13 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex justify-center items-center space-x-2">
             <Image
-              src="logo.png"
+              src="logo_only.png"
               alt="Evviva Montessori"
-              width={160}
-              height={0}
-              className="h-10 w-auto"
+              width={691}
+              height={254}
+              className="h-12 w-auto sm:h-14 md:h-16 lg:h-20"
             />
           </Link>
 

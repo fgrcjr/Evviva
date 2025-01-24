@@ -1,0 +1,51 @@
+make me a daycare website
+
+company name: Evviva
+tagline: Guiding Young Minds
+
+1. use nextjs and shadcn
+2. make endpoints
+3. use sage green and color of nature for color scheme
+4. use web3forms for forms
+5. pages consists of Home, Programs, About, Contact
+6. apply gsap when scrolling but make it so that busy parents and old people wont complain about it
+7. use a font that is eye catching for both kids and parents
+
+make sure of the following:
+ADA compliant
+mobile responsive
+easy to navigate
+attractive visuals
+
+for the About page, add a mission and vision
+Mission Statement
+"Our mission is to cultivate a nurturing and stimulating Montessori environment where each child is respected as an individual. We are dedicated to fostering emotional, intellectual, and social growth, ensuring that every child feels valued and secure. Through hands-on learning experiences, we aim to inspire curiosity, creativity, and a love for learning, empowering children to become compassionate, responsible citizens of the world."
+Vision Statement
+"Our vision is to create a community of lifelong learners who grow into empathetic leaders and problem solvers. We envision a future where children thrive in an environment that promotes respect for themselves, others, and the world around them. By instilling values of kindness, cooperation, and responsibility, we aspire to prepare our children not only for academic success but also for meaningful contributions to society."
+
+for the Contact Page, use web3form
+make all inputs required, use modal instead of new page and allow user to exit modal when clicking outside the modal
+
+for Programs, use the following reference
+Infants (6 weeks to 12 months)
+Care and Nurturing: Focus on creating a safe and nurturing environment with individualized attention. Activities include:
+Sensory Play: Using soft toys, textures, and sounds to stimulate senses.
+Tummy Time: Encouraging physical development and motor skills.
+Story Time: Reading simple books to promote language development.
+Toddlers (12 months to 3 years)
+Exploration and Socialization: Programs designed to foster independence and social skills. Activities include:
+Creative Arts: Simple crafts using safe materials to encourage creativity.
+Music and Movement: Engaging in songs and dances to develop rhythm and coordination.
+Play-Based Learning: Structured playtime that promotes sharing and cooperation among peers.
+Preschoolers (3 to 5 years)
+Preparation for Kindergarten: Focus on enhancing cognitive, emotional, and social skills. Activities include:
+Literacy Activities: Storytelling, phonics games, and letter recognition exercises.
+Math Concepts: Simple counting games, sorting activities, and pattern recognition.
+Physical Activities: Outdoor play, obstacle courses, and group games to develop gross motor skills.
+School-Age Children (5 years and older)
+After-School Care Programs: Designed for children who need care before or after school hours. Activities include:
+Homework Help: Providing support for school assignments in a quiet environment.
+Recreational Activities: Sports, arts and crafts, and group games to promote teamwork.
+Field Trips: Organizing outings to local museums or parks for experiential learning.
+
+for the images, make a placeholder as reference

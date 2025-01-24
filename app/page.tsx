@@ -11,26 +11,26 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center bg-gradient-to-b from-sage-50 to-white">
+      <section className="relative h-auto md:h-[90vh] flex items-center justify-center bg-gradient-to-b from-sage-50 to-white py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-on-scroll space-y-6">
-              <h1 className="text-5xl md:text-6xl font-bold text-sage-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="animate-on-scroll space-y-6 text-center md:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-sage-800">
                 Guiding Young Minds
               </h1>
-              <p className="text-xl text-sage-600">
+              <p className="text-lg sm:text-xl text-sage-600">
                 At our daycare, we believe every child deserves a supportive and
                 enriching environment. Join us in fostering curiosity and
                 creativity in your child&apos;s early years.
               </p>
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Link href="/contact">
-                  <Button className="bg-nature-600 hover:bg-nature-700 text-lg px-8 py-6">
+                  <Button className="bg-nature-600 hover:bg-nature-700 text-lg px-6 py-4">
                     Schedule a Tour
                   </Button>
                 </Link>
                 <Link href="/programs">
-                  <Button variant="outline" className="text-lg px-8 py-6">
+                  <Button variant="outline" className="text-lg px-6 py-4">
                     Explore Programs
                   </Button>
                 </Link>
@@ -42,88 +42,69 @@ export default function Home() {
                 alt="Children learning and playing"
                 width={600}
                 height={400}
-                className="rounded-lg shadow-xl"
+                className="rounded-lg shadow-xl w-full max-w-sm md:max-w-full mx-auto"
               />
             </div>
           </div>
         </div>
       </section>
-
+  
       {/* Features Section */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-sage-800 mb-16">
-            Discover Our Daycare&apos;s Exceptional Features for Your
-            Child&apos;s Growth and Development
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-sage-800 mb-12">
+            Discover Our Daycare&apos;s Exceptional Features
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="animate-on-scroll text-center">
-              <Image
-                src="/feature-1.jpg"
-                alt="Safe learning environment"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-md mb-6"
-              />
-              <h3 className="text-xl font-semibold text-sage-800 mb-4">
-                Experience a Safe, Accessible, and Engaging Learning Environment
-                for Every Child
-              </h3>
-              <p className="text-sage-600 mb-4">
-                Our daycare is fully ADA compliant, ensuring a welcoming space
-                for all.
-              </p>
-              <Link href="/about">
-                <Button variant="link" className="text-nature-600">
-                  Learn More →
-                </Button>
-              </Link>
-            </div>
-            <div className="animate-on-scroll text-center">
-              <Image
-                src="/feature-2.jpg"
-                alt="User-friendly experience"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-md mb-6"
-              />
-              <h3 className="text-xl font-semibold text-sage-800 mb-4">
-                Navigate Our User-Friendly Website with Ease and Convenience
-              </h3>
-              <p className="text-sage-600 mb-4">
-                Our mobile-responsive design allows parents to access
-                information anytime, anywhere.
-              </p>
-              <Link href="/contact">
-                <Button variant="link" className="text-nature-600">
-                  Sign Up →
-                </Button>
-              </Link>
-            </div>
-            <div className="animate-on-scroll text-center">
-              <Image
-                src="/feature-3.jpg"
-                alt="Creative activities"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-md mb-6"
-              />
-              <h3 className="text-xl font-semibold text-sage-800 mb-4">
-                Engaging Activities That Spark Curiosity and Learning
-              </h3>
-              <p className="text-sage-600 mb-4">
-                Our attractive visuals create an inviting atmosphere that sparks
-                children&apos;s curiosity.
-              </p>
-              <Link href="/programs">
-                <Button variant="link" className="text-nature-600">
-                  Explore →
-                </Button>
-              </Link>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+            {[
+              {
+                src: "/feature-1.jpg",
+                alt: "Safe learning environment",
+                title: "Safe, Accessible, and Engaging Learning",
+                description: "Our daycare is fully ADA compliant, ensuring a welcoming space for all.",
+                link: "/about",
+                linkText: "Learn More →",
+              },
+              {
+                src: "/feature-2.jpg",
+                alt: "User-friendly experience",
+                title: "Easy-to-Use Website for Parents",
+                description: "Our mobile-responsive design allows parents to access information anytime, anywhere.",
+                link: "/contact",
+                linkText: "Sign Up →",
+              },
+              {
+                src: "/feature-3.jpg",
+                alt: "Creative activities",
+                title: "Engaging Activities for Learning",
+                description: "Our attractive visuals create an inviting atmosphere that sparks curiosity.",
+                link: "/programs",
+                linkText: "Explore →",
+              },
+            ].map((feature, index) => (
+              <div key={index} className="animate-on-scroll text-center">
+                <Image
+                  src={feature.src}
+                  alt={feature.alt}
+                  width={400}
+                  height={300}
+                  className="rounded-lg shadow-md mb-6 w-full max-w-[300px] mx-auto"
+                />
+                <h3 className="text-lg sm:text-xl font-semibold text-sage-800 mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-sage-600 mb-4">{feature.description}</p>
+                <Link href={feature.link}>
+                  <Button variant="link" className="text-nature-600">
+                    {feature.linkText}
+                  </Button>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
     </div>
   );
+  
 }
