@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "9bf52b0f-0e94-47c3-803f-a708e5acae9f",
+  "id": "5ef16d35-7f97-421c-8e82-68318433e5ad",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "tour_requests": {
@@ -10,9 +10,9 @@
         "id": {
           "name": "id",
           "type": "integer",
-          "primaryKey": false,
-          "notNull": false,
-          "autoincrement": false
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
         },
         "full_name": {
           "name": "full_name",
@@ -35,9 +35,9 @@
           "notNull": false,
           "autoincrement": false
         },
-        "child_age": {
-          "name": "child_age",
-          "type": "integer",
+        "child_age_range": {
+          "name": "child_age_range",
+          "type": "text",
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false

@@ -9,6 +9,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
+import { createTourRequest } from "@/lib/actions";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { ageRange, ageRanges } from "@/lib/constants";
 
 export default function Contact() {
   useGsapAnimation();
@@ -20,18 +29,10 @@ export default function Contact() {
 
     const formData = new FormData(e.currentTarget);
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await createTourRequest(formData);
 
-      const data = await response.json();
-      if (data.success) {
-        toast.success("Message sent successfully!");
-        (e.target as HTMLFormElement).reset();
-      } else {
-        throw new Error("Failed to send message");
-      }
+      toast.success(`Thank you, ${res.fullName}! We'll be in touch soon.`);
+      (e.target as HTMLFormElement).reset();
     } catch (error) {
       toast.error("Failed to send message. Please try again.");
     } finally {
@@ -129,8 +130,19 @@ export default function Contact() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="child_age">Child&apos;s Age</Label>
-                <Input id="child_age" name="child_age" required />
+                <Label htmlFor="child_age_range">Child&apos;s Age</Label>
+                <Select name="child_age_range" required>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select an item" />
+                    <SelectContent>
+                      {Object.entries(ageRange).map(([key, val]) => (
+                        <SelectItem key={key} value={key}>
+                          {val}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </SelectTrigger>
+                </Select>
               </div>
 
               <div className="space-y-2">
@@ -139,7 +151,6 @@ export default function Contact() {
                   id="message"
                   name="message"
                   placeholder="Please share any specific questions or preferences for the tour."
-                  required
                 />
               </div>
 
