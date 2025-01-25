@@ -61,7 +61,7 @@ export default function Home() {
             src: "/feature-1.jpg",
             alt: "Safe learning environment",
             title: "Safe, Accessible, and Engaging Learning",
-            description: " Our experienced team is committed to nurturing your child's growth and development. With a focus on safety and creativity, we ensure a supportive environment for every child.",
+            description: "Our daycare is fully ADA compliant, ensuring a welcoming space for all.",
             link: "/about",
             linkText: "Learn More →",
           },
