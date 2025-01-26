@@ -33,7 +33,7 @@ export async function createTourRequest(formData: FormData) {
 
       return tourRequest;
   } catch(error) {
-      return error;
+      throw error;
   } 
 
 }
