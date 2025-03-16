@@ -66,8 +66,6 @@ const Navigation = () => {
         { href: "/programs/toddler", label: "Toddler" },
         { href: "/programs/primary", label: "Primary" },
         { href: "/programs/elementary", label: "Elementary" },
-        { href: "/programs/middle-school", label: "Middle School" },
-        { href: "/programs/summer", label: "Summer Program" },
       ]
     },
     { 
