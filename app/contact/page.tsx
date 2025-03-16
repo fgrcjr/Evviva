@@ -77,7 +77,7 @@ export default function Contact() {
                 <h2 className="text-xl font-semibold text-sage-800 mb-2">
                   Visit Us
                 </h2>
-                <p className="text-sage-600">123 Education Lane<br />Anytown, ST 12345</p>
+                <p className="text-sage-600">193A Mallory Ave.<br />Jersey City NJ 07304-1288</p>
               </div>
             </div>
   

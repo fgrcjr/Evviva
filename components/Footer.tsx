@@ -53,8 +53,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">Contact Info</h4>
             <ul className="space-y-2 text-gray-600">
-              <li>123 Education Lane</li>
-              <li>Anytown, ST 12345</li>
+              <li>193A Mallory Ave.</li>
+              <li>Jersey City NJ 07304-1288</li>
               <li>Phone: (555) 123-4567</li>
               <li>Email: info@evviva.com</li>
             </ul>
