@@ -4,71 +4,99 @@ import React from 'react';
 import Head from "next/head";
 import { useGsapAnimation } from "@/lib/gsap";
 import Image from 'next/image';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Linkedin, Twitter, Globe } from "lucide-react";
+import Link from "next/link";
 
-interface StaffMember {
-  id: number;
+interface TeamMember {
   name: string;
   position: string;
   bio: string;
   image: string;
-  education: string[];
-  certifications?: string[];
+  social: {
+    linkedin?: string;
+    twitter?: string;
+    website?: string;
+  };
 }
 
+const teamMembers: TeamMember[] = [
+  {
+    name: "Alice Johnson",
+    position: "Lead Teacher",
+    bio: "Alice has over 10 years of experience in Montessori education and loves nurturing young minds.",
+    image: "/images/team/alice-johnson.jpg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      website: "#"
+    }
+  },
+  {
+    name: "Mark Smith",
+    position: "Assistant Teacher",
+    bio: "Mark is passionate about creating engaging learning experiences for children in their formative years.",
+    image: "/images/team/mark-smith.jpg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      website: "#"
+    }
+  },
+  {
+    name: "Sarah Lee",
+    position: "Curriculum Director",
+    bio: "Sarah designs innovative curriculum that inspires creativity and critical thinking in young learners.",
+    image: "/images/team/sarah-lee.jpg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      website: "#"
+    }
+  },
+  {
+    name: "Tom Brown",
+    position: "Program Coordinator",
+    bio: "Tom coordinates programs that promote social skills and emotional development in children.",
+    image: "/images/team/tom-brown.jpg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      website: "#"
+    }
+  },
+  {
+    name: "Linda White",
+    position: "Office Manager",
+    bio: "Linda ensures smooth operations and supports families with their inquiries and needs.",
+    image: "/images/team/linda-white.jpg",
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      website: "#"
+    }
+  }
+];
 
-const staffMembers: StaffMember[] = [
+const testimonials = [
   {
-    id: 1,
-    name: "Sarah Johnson",
-    position: "Head of School",
-    bio: "Sarah has over 20 years of experience in education and has been with our school since its founding. She is passionate about creating an environment where children can thrive.",
-    image: "/images/staff/sarah-johnson.jpg",
-    education: ["M.Ed. in Educational Leadership", "B.A. in Child Development"],
-    certifications: ["AMI Montessori Certification", "Educational Leadership Certificate"]
+    text: "The team has been incredible in nurturing our child's development. We've seen remarkable progress!",
+    author: "Emily Johnson",
+    role: "Parent",
+    image: "/images/testimonials/emily.jpg"
   },
   {
-    id: 2,
-    name: "Michael Chen",
-    position: "Primary Program Director",
-    bio: "Michael brings 15 years of experience in Montessori education. He specializes in creating engaging learning environments for young children.",
-    image: "/images/staff/michael-chen.jpg",
-    education: ["M.A. in Early Childhood Education", "B.S. in Psychology"],
-    certifications: ["AMS Montessori Certification"]
+    text: "The dedication and passion of the teachers make this place special. Our kids love coming here!",
+    author: "Michael Smith",
+    role: "Parent",
+    image: "/images/testimonials/michael.jpg"
   },
   {
-    id: 3,
-    name: "Aisha Patel",
-    position: "Elementary Program Lead",
-    bio: "Aisha has been teaching for 12 years and is dedicated to fostering independence and critical thinking in elementary-aged children.",
-    image: "/images/staff/aisha-patel.jpg",
-    education: ["M.Ed. in Elementary Education", "B.A. in Liberal Arts"],
-    certifications: ["AMI Elementary Certification", "STEM Education Certificate"]
-  },
-  {
-    id: 4,
-    name: "Robert Martinez",
-    position: "Administrative Director",
-    bio: "Robert oversees the day-to-day operations of our school, ensuring that our environment supports both students and staff.",
-    image: "/images/staff/robert-martinez.jpg",
-    education: ["MBA", "B.S. in Business Administration"]
-  },
-  {
-    id: 5,
-    name: "Emily Wilson",
-    position: "Primary Classroom Teacher",
-    bio: "Emily creates a nurturing classroom environment where children develop independence and a love for learning.",
-    image: "/images/staff/emily-wilson.jpg",
-    education: ["B.A. in Education"],
-    certifications: ["AMS Primary Certification"]
-  },
-  {
-    id: 6,
-    name: "David Thompson",
-    position: "Elementary Classroom Teacher",
-    bio: "David specializes in project-based learning and helps students develop critical thinking skills through hands-on experiences.",
-    image: "/images/staff/david-thompson.jpg",
-    education: ["M.Ed. in Curriculum Development", "B.S. in Environmental Science"],
-    certifications: ["AMI Elementary Certification"]
+    text: "We're amazed by the personalized attention and care each child receives. Truly exceptional!",
+    author: "Sarah Williams",
+    role: "Parent",
+    image: "/images/testimonials/sarah.jpg"
   }
 ];
 
@@ -81,132 +109,123 @@ export default function FacultyStaffPage() {
         <title>Faculty & Staff | About Us</title>
         <meta
           name="description"
-          content="Meet our dedicated team of educators and staff members committed to providing an exceptional educational experience for every child."
+          content="Meet our dedicated team of educators and staff members committed to providing an exceptional educational experience."
         />
-        <meta property="og:title" content="Faculty & Staff | About Us" />
-        <meta property="og:description" content="Meet our experienced educators and staff who bring passion and expertise to our school community." />
-        <meta property="og:image" content="/images/staff/sarah-johnson.jpg" />
-        <meta name="keywords" content="Montessori teachers, school staff, education professionals, certified educators, AMI certification, AMS certification" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Faculty & Staff | About Us" />
-        <meta name="twitter:description" content="Meet our experienced educators and staff who bring passion and expertise to our school community." />
-        <meta name="twitter:image" content="/images/staff/sarah-johnson.jpg" />
       </Head>
+
       <div className="min-h-screen bg-gradient-to-b from-sage-50 to-white pt-24">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-16 animate-on-scroll">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6">Faculty & Staff</h1>
-            <p className="text-lg mb-8">
-              Our dedicated team of educators and staff members are committed to providing 
-              an exceptional educational experience for every child. Each member brings unique 
-              skills, experience, and passion to our school community.
-            </p>
-            
-            <div className="mb-12">
-              <h2 className="text-2xl font-semibold mb-6">Leadership Team</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {staffMembers.slice(0, 3).map(member => (
-                  <div key={member.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                    <div className="relative h-64 w-full">
-                      <Image 
-                        src={member.image} 
-                        alt={member.name}
-                        fill
-                        style={{ objectFit: 'cover' }}
-                        className="transition-transform hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold">{member.name}</h3>
-                      <p className="text-blue-600 mb-3">{member.position}</p>
-                      <p className="mb-4">{member.bio}</p>
-                      
-                      <div className="mt-4">
-                        <h4 className="font-medium mb-1">Education</h4>
-                        <ul className="list-disc pl-5 text-sm">
-                          {member.education.map((edu, index) => (
-                            <li key={index}>{edu}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      {member.certifications && (
-                        <div className="mt-3">
-                          <h4 className="font-medium mb-1">Certifications</h4>
-                          <ul className="list-disc pl-5 text-sm">
-                            {member.certifications.map((cert, index) => (
-                              <li key={index}>{cert}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div>
-              <h2 className="text-2xl font-semibold mb-6">Teaching Staff</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {staffMembers.slice(3).map(member => (
-                  <div key={member.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                    <div className="relative h-64 w-full">
-                      <Image 
-                        src={member.image} 
-                        alt={member.name}
-                        fill
-                        style={{ objectFit: 'cover' }}
-                        className="transition-transform hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold">{member.name}</h3>
-                      <p className="text-blue-600 mb-3">{member.position}</p>
-                      <p className="mb-4">{member.bio}</p>
-                      
-                      <div className="mt-4">
-                        <h4 className="font-medium mb-1">Education</h4>
-                        <ul className="list-disc pl-5 text-sm">
-                          {member.education.map((edu, index) => (
-                            <li key={index}>{edu}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      {member.certifications && (
-                        <div className="mt-3">
-                          <h4 className="font-medium mb-1">Certifications</h4>
-                          <ul className="list-disc pl-5 text-sm">
-                            {member.certifications.map((cert, index) => (
-                              <li key={index}>{cert}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="mt-12 bg-blue-50 p-8 rounded-lg">
-              <h2 className="text-2xl font-semibold mb-4">Join Our Team</h2>
-              <p className="mb-4">
-                We're always looking for passionate educators to join our community. 
-                If you're interested in working with us, please visit our careers page 
-                to see current openings.
+        {/* Hero Section */}
+        <section className="relative h-[400px] bg-gray-900">
+          <div className="absolute inset-0 bg-black/60 z-10" />
+          <Image
+            src="/images/team/hero.jpg"
+            alt="Our team"
+            fill
+            className="object-cover"
+          />
+          <div className="relative z-20 h-full flex items-center justify-center text-center">
+            <div className="container px-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-sans">
+                Meet Our Team
+              </h1>
+              <p className="text-lg text-white/90 max-w-2xl mx-auto font-poppins">
+                Our dedicated staff is passionate about nurturing and guiding each child's unique journey.
               </p>
-              <a 
-                href="/careers" 
-                className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
-              >
-                View Open Positions
-              </a>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="container mx-auto px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-sage-800 mb-4 font-sans">Our Team</h2>
+            <p className="text-lg text-sage-600 max-w-2xl mx-auto font-poppins">
+              Dedicated professionals passionate about early childhood education.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <Card key={index} className="animate-on-scroll overflow-hidden">
+                <div className="aspect-w-3 aspect-h-4 relative">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold text-sage-800 mb-1 font-sans">{member.name}</h3>
+                  <p className="text-nature-600 mb-3 font-poppins">{member.position}</p>
+                  <p className="text-sage-600 mb-4 font-poppins">{member.bio}</p>
+                  <div className="flex gap-4">
+                    {member.social.linkedin && (
+                      <a href={member.social.linkedin} className="text-sage-600 hover:text-nature-600">
+                        <Linkedin className="h-5 w-5" />
+                      </a>
+                    )}
+                    {member.social.twitter && (
+                      <a href={member.social.twitter} className="text-sage-600 hover:text-nature-600">
+                        <Twitter className="h-5 w-5" />
+                      </a>
+                    )}
+                    {member.social.website && (
+                      <a href={member.social.website} className="text-sage-600 hover:text-nature-600">
+                        <Globe className="h-5 w-5" />
+                      </a>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="bg-sage-50 py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-sage-800 mb-12 text-center font-sans">
+              Parent Testimonials
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="animate-on-scroll">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.author}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sage-800 font-sans">{testimonial.author}</h4>
+                        <p className="text-sage-600 text-sm font-poppins">{testimonial.role}</p>
+                      </div>
+                    </div>
+                    <p className="text-sage-600 italic font-poppins">{testimonial.text}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Join Our Team Section */}
+        <section className="container mx-auto px-4 py-16 text-center">
+          <h2 className="text-3xl font-bold text-sage-800 mb-4 font-sans">We're Hiring!</h2>
+          <p className="text-lg text-sage-600 mb-8 max-w-2xl mx-auto font-poppins">
+            Join our passionate team and make a difference in children's lives.
+          </p>
+          <Link href="/careers">
+            <Button className="bg-nature-600 hover:bg-nature-700">
+              View Open Positions
+            </Button>
+          </Link>
+        </section>
       </div>
     </>
   );

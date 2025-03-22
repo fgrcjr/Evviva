@@ -3,9 +3,39 @@
 import React from 'react';
 import Head from "next/head";
 import { useGsapAnimation } from "@/lib/gsap";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Heart, Lightbulb, Users, BookOpen, Target, Sparkles } from "lucide-react";
 
 export default function MissionVisionPage() {
   useGsapAnimation();
+
+  const values = [
+    {
+      icon: Heart,
+      title: "Respect",
+      description: "Fostering mutual respect among children, staff, and families",
+    },
+    {
+      icon: Users,
+      title: "Community",
+      description: "Building strong, supportive relationships",
+    },
+    {
+      icon: BookOpen,
+      title: "Learning",
+      description: "Promoting continuous growth and development",
+    },
+    {
+      icon: Target,
+      title: "Excellence",
+      description: "Striving for the highest standards in education",
+    },
+    {
+      icon: Sparkles,
+      title: "Creativity",
+      description: "Encouraging imagination and innovative thinking",
+    },
+  ];
 
   return (
     <>
@@ -15,94 +45,93 @@ export default function MissionVisionPage() {
           name="description"
           content="Our mission, vision, and core values that guide our educational approach"
         />
-        <meta property="og:title" content="Mission & Vision | About Us" />
-        <meta property="og:description" content="Learn about our journey, mission, and vision." />
-        <meta property="og:image" content="/images/mission-vision.jpg" />
       </Head>
       
       <div className="min-h-screen bg-gradient-to-b from-sage-50 to-white pt-24">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-16 animate-on-scroll">
-            <h1 className="text-3xl md:text-4xl font-bold mb-6">Mission & Vision</h1>
-            
-            <div className="prose prose-lg max-w-none">
-              <section className="mb-12">
-                <div className="bg-blue-50 p-8 rounded-lg shadow-sm mb-8">
-                  <h2 className="text-2xl font-semibold text-blue-800 mb-4">Our Mission</h2>
-                  <p className="text-lg">
-                    To provide a nurturing and stimulating environment where children develop a 
-                    passion for learning, independence, and respect for themselves and others, 
-                    preparing them to become confident, creative, and responsible members of society.
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16 animate-on-scroll">
+              <h1 className="text-4xl md:text-5xl font-bold text-sage-800 mb-6 font-sans">
+                Mission & Vision
+              </h1>
+              <p className="text-lg text-sage-600 max-w-2xl mx-auto font-poppins">
+                Discover our commitment to nurturing young minds and fostering a
+                love for learning.
+              </p>
+            </div>
+
+            <div className="grid gap-8 mb-16">
+              <Card className="animate-on-scroll border-sage-200 hover:shadow-lg transition-all duration-300">
+                <CardHeader className="space-y-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Heart className="h-8 w-8 text-nature-600" />
+                    <CardTitle className="text-2xl text-sage-800 font-sans">
+                      Our Mission
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="text-sage-700 space-y-4 font-poppins">
+                  <p>
+                    Our mission is to cultivate a nurturing and stimulating Montessori 
+                    environment where each child is respected as an individual. We are 
+                    dedicated to fostering emotional, intellectual, and social growth, 
+                    ensuring that every child feels valued and secure.
                   </p>
-                </div>
-                
-                <div className="bg-green-50 p-8 rounded-lg shadow-sm">
-                  <h2 className="text-2xl font-semibold text-green-800 mb-4">Our Vision</h2>
-                  <p className="text-lg">
-                    To be recognized as a leading educational institution that empowers children 
-                    to reach their full potential intellectually, emotionally, and socially, 
-                    fostering a lifelong love of learning and contributing to a more peaceful 
-                    and harmonious world.
+                  <p>
+                    Through hands-on learning experiences, we aim to inspire curiosity, 
+                    creativity, and a love for learning, empowering children to become 
+                    compassionate, responsible citizens of the world.
                   </p>
-                </div>
-              </section>
-              
-              <section>
-                <h2 className="text-2xl font-semibold mb-6">Our Core Values</h2>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-purple-500">
-                    <h3 className="text-xl font-medium mb-2">Respect</h3>
-                    <p>
-                      We foster mutual respect among children, staff, and families, 
-                      honoring each person's unique qualities and contributions.
-                    </p>
+                </CardContent>
+              </Card>
+
+              <Card className="animate-on-scroll border-sage-200 hover:shadow-lg transition-all duration-300">
+                <CardHeader className="space-y-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Lightbulb className="h-8 w-8 text-nature-600" />
+                    <CardTitle className="text-2xl text-sage-800 font-sans">
+                      Our Vision
+                    </CardTitle>
                   </div>
-                  
-                  <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-yellow-500">
-                    <h3 className="text-xl font-medium mb-2">Independence</h3>
-                    <p>
-                      We encourage children to think and act for themselves, 
-                      developing self-reliance and confidence in their abilities.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-red-500">
-                    <h3 className="text-xl font-medium mb-2">Community</h3>
-                    <p>
-                      We build a supportive community where collaboration, 
-                      empathy, and social responsibility are valued and practiced.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-500">
-                    <h3 className="text-xl font-medium mb-2">Excellence</h3>
-                    <p>
-                      We strive for excellence in all aspects of our educational 
-                      program, continuously improving our methods and environment.
-                    </p>
-                  </div>
-                </div>
-              </section>
-              
-              <section className="mt-12">
-                <h2 className="text-2xl font-semibold mb-4">Our Educational Philosophy</h2>
-                <p>
-                  Our educational approach is based on the belief that children are naturally 
-                  curious and capable learners. We provide a carefully prepared environment 
-                  that allows children to explore, discover, and develop at their own pace.
-                </p>
-                <p className="mt-4">
-                  We believe in:
-                </p>
-                <ul className="list-disc pl-6 mt-2">
-                  <li>Respecting each child's individual development and learning style</li>
-                  <li>Fostering independence and self-discipline</li>
-                  <li>Encouraging curiosity, creativity, and critical thinking</li>
-                  <li>Promoting peace, global awareness, and environmental stewardship</li>
-                  <li>Building strong partnerships between school and family</li>
-                </ul>
-              </section>
+                </CardHeader>
+                <CardContent className="text-sage-700 space-y-4 font-poppins">
+                  <p>
+                    Our vision is to create a community of lifelong learners who grow 
+                    into empathetic leaders and problem solvers. We envision a future 
+                    where children thrive in an environment that promotes respect for 
+                    themselves, others, and the world around them.
+                  </p>
+                  <p>
+                    By instilling values of kindness, cooperation, and responsibility, 
+                    we aspire to prepare our children not only for academic success but 
+                    also for meaningful contributions to society.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="mt-16 animate-on-scroll">
+              <h2 className="text-3xl font-bold text-sage-800 mb-8 text-center font-sans">
+                Our Core Values
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                {values.map((value, index) => (
+                  <Card 
+                    key={index}
+                    className="animate-on-scroll border-sage-200 hover:shadow-lg transition-all duration-300"
+                  >
+                    <CardContent className="pt-6">
+                      <value.icon className="h-10 w-10 text-nature-600 mb-4" />
+                      <h3 className="text-xl font-semibold text-sage-800 mb-2 font-sans">
+                        {value.title}
+                      </h3>
+                      <p className="text-sage-600 font-poppins">
+                        {value.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </div>
