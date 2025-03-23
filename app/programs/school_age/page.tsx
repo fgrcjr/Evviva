@@ -12,7 +12,7 @@ export default function ElementaryPage() {
   return (
     <>
       <Head>
-        <title>Elementary Program | Program</title>
+        <title>School-Age | Program</title>
         <meta
           name="description"
           content="Engaging education for children aged 6 to 12 years."
@@ -24,8 +24,8 @@ export default function ElementaryPage() {
 
       <div className="min-h-screen bg-gradient-to-b to-white pt-24 animate-fade-up">
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold text-nature-700">Elementary Program</h1>
-          <p className="text-xl text-sage-700">Ages 6 to 12 years</p>
+          <h1 className="text-4xl font-bold text-nature-700">School-Age Program</h1>
+          <p className="text-xl text-sage-700">5 years and older</p>
         </div>
 
         <div className="relative h-80 w-full rounded-xl overflow-hidden">
@@ -40,7 +40,7 @@ export default function ElementaryPage() {
 
         <div className="space-y-6 text-gray-700">
           <p>
-            Our Elementary Program builds on the foundation established in the Primary years, offering an 
+            Our School-Age Program builds on the foundation established in the Primary years, offering an 
             integrated, project-based curriculum that responds to the elementary child's heightened social 
             nature, expanding imagination, and growing capacity for abstract thinking and moral reasoning.
           </p>
