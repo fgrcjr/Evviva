@@ -17,6 +17,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [logoError, setLogoError] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -47,6 +48,11 @@ const Navigation = () => {
     setActiveDropdown(activeDropdown === href ? null : href);
   };
 
+  const handleLogoError = () => {
+    console.error("Failed to load logo image");
+    setLogoError(true);
+  };
+
   const navLinks: NavItem[] = [
     { 
       href: "/about", 
@@ -64,8 +70,8 @@ const Navigation = () => {
       dropdown: [
         { href: "/programs/infants", label: "Infant" }, 
         { href: "/programs/toddler", label: "Toddler" },
-        { href: "/programs/primary", label: "Primary" },
-        { href: "/programs/elementary", label: "Elementary" },
+        { href: "/programs/preschool", label: "Preschoolers" },
+        { href: "/programs/school_age", label: "School-Age" },
       ]
     },
     { 
@@ -104,14 +110,19 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex justify-center items-center space-x-2">
-            <Image
-              src="logo_only.png"
-              alt="Evviva Montessori"
-              width={691}
-              height={254}
-              className="h-12 w-auto sm:h-14 md:h-16 lg:h-20"
-              priority={true}
-            />
+            {logoError ? (
+              <div className="font-bold text-xl text-sage-700">Evviva Montessori</div>
+            ) : (
+              <Image
+                src="/logo_only.png"
+                alt="Evviva Montessori"
+                width={691}
+                height={254}
+                className="h-12 w-auto sm:h-14 md:h-16 lg:h-20"
+                priority={true}
+                onError={handleLogoError}
+              />
+            )}
           </Link>
 
           {/* Desktop Navigation */}
