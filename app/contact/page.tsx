@@ -18,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ageRange } from "@/lib/constants";
+import type { NextPage } from "next";
 
 type ContactPageProps = {
   title?: string;
@@ -36,7 +37,7 @@ type ContactPageProps = {
   className?: string;
 }
 
-const Contact = ({
+const Contact: NextPage<ContactPageProps> = ({
   title = "Contact Us",
   subtitle = "We'd love to hear from you. Get in touch with us for any questions about our programs.",
   imageSrc = "/contact-image.jpg",
