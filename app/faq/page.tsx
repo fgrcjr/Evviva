@@ -1,16 +1,9 @@
 "use client";
 
 import { useGsapAnimation } from "@/lib/gsap";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { FAQSection } from "@/components/sections/FAQSection";
 
-const faqs = [
+const defaultFaqs = [
   {
     question: "What is Montessori education?",
     answer:
@@ -43,50 +36,17 @@ const faqs = [
   },
 ];
 
-export default function FAQ() {
+export default function Page() {
   useGsapAnimation();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sage-50 to-white pt-24">
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16 animate-on-scroll">
-          <h1 className="text-4xl md:text-5xl font-bold text-sage-800 mb-4">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-lg text-sage-600 max-w-2xl mx-auto">
-            Find answers to common questions about our daycare services and
-            Montessori approach.
-          </p>
-        </div>
-
-        <div className="max-w-3xl mx-auto animate-on-scroll">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-white rounded-lg border border-sage-200"
-              >
-                <AccordionTrigger className="px-6 text-sage-800 hover:text-sage-600 hover:no-underline">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-sage-600">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-
-          <div className="text-center mt-12">
-            <p className="text-sage-600 mb-4">Still have questions?</p>
-            <Link href="/contact">
-              <Button className="bg-nature-600 hover:bg-nature-700">
-                Contact Us
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+    <FAQSection
+      title="Frequently Asked Questions"
+      subtitle="Find answers to common questions about our daycare services and Montessori approach."
+      faqs={defaultFaqs}
+      ctaText="Still have questions?"
+      ctaButtonText="Contact Us"
+      ctaButtonHref="/contact"
+    />
   );
 }
