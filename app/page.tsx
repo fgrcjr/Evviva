@@ -4,35 +4,6 @@ import { useGsapAnimation } from "@/lib/gsap";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
 
-interface HomePageProps {
-  heroTitle?: string;
-  heroDescription?: string;
-  heroImageSrc?: string;
-  heroImageAlt?: string;
-  heroButtons?: Array<{
-    href: string;
-    label: string;
-    variant?:
-      | "default"
-      | "outline"
-      | "secondary"
-      | "ghost"
-      | "link"
-      | "destructive";
-  }>;
-  featuresTitle?: string;
-  features?: Array<{
-    title: string;
-    description: string;
-    imageSrc?: string;
-    imageAlt?: string;
-    link?: {
-      href: string;
-      label: string;
-    };
-  }>;
-}
-
 const defaultHeroButtons = [
   {
     href: "/contact",
@@ -82,28 +53,23 @@ const defaultFeatures = [
   },
 ];
 
-export default function Home({
-  heroTitle = "Guiding Young Minds",
-  heroDescription = "At our daycare, we believe every child deserves a supportive and enriching environment. Join us in fostering curiosity and creativity in your child's early years.",
-  heroImageSrc = "/hero-image.jpg",
-  heroImageAlt = "Children learning and playing",
-  heroButtons = defaultHeroButtons,
-  featuresTitle = "Discover Our Daycare's Exceptional Features",
-  features = defaultFeatures,
-}: HomePageProps) {
+export default function Page() {
   useGsapAnimation();
 
   return (
     <div className="min-h-screen">
       <HeroSection
-        title={heroTitle}
-        description={heroDescription}
-        imageSrc={heroImageSrc}
-        imageAlt={heroImageAlt}
-        buttons={heroButtons}
+        title="Guiding Young Minds"
+        description="At our daycare, we believe every child deserves a supportive and enriching environment. Join us in fostering curiosity and creativity in your child's early years."
+        imageSrc="/hero-image.jpg"
+        imageAlt="Children learning and playing"
+        buttons={defaultHeroButtons}
       />
 
-      <FeaturesSection title={featuresTitle} features={features} />
+      <FeaturesSection 
+        title="Discover Our Daycare's Exceptional Features" 
+        features={defaultFeatures} 
+      />
     </div>
   );
 }

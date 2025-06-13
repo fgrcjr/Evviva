@@ -62,7 +62,7 @@ const Footer = ({
         {/* Logo Section */}
         <div className="flex justify-center mb-8">
           <Logo
-            href={null}
+            href={undefined}
             logoSrc={logoSrc}
             logoAlt={logoAlt}
             width={logoWidth}

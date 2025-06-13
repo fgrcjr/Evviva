@@ -36,36 +36,17 @@ const defaultFaqs = [
   },
 ];
 
-interface FAQPageProps {
-  title?: string;
-  subtitle?: string;
-  faqs?: Array<{
-    question: string;
-    answer: string;
-  }>;
-  ctaText?: string;
-  ctaButtonText?: string;
-  ctaButtonHref?: string;
-}
-
-export default function FAQ({
-  title = "Frequently Asked Questions",
-  subtitle = "Find answers to common questions about our daycare services and Montessori approach.",
-  faqs = defaultFaqs,
-  ctaText = "Still have questions?",
-  ctaButtonText = "Contact Us",
-  ctaButtonHref = "/contact",
-}: FAQPageProps) {
+export default function Page() {
   useGsapAnimation();
 
   return (
     <FAQSection
-      title={title}
-      subtitle={subtitle}
-      faqs={faqs}
-      ctaText={ctaText}
-      ctaButtonText={ctaButtonText}
-      ctaButtonHref={ctaButtonHref}
+      title="Frequently Asked Questions"
+      subtitle="Find answers to common questions about our daycare services and Montessori approach."
+      faqs={defaultFaqs}
+      ctaText="Still have questions?"
+      ctaButtonText="Contact Us"
+      ctaButtonHref="/contact"
     />
   );
 }

@@ -17,4 +17,4 @@ export { FAQSection } from "./sections/FAQSection";
 // Main Components
 export { default as Navigation } from "./Navigation";
 export { default as Footer } from "./Footer";
-export { default as ThemeProvider } from "./theme-provider";
+export { ThemeProvider } from "./theme-provider";
