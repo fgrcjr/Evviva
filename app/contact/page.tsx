@@ -18,41 +18,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ageRange } from "@/lib/constants";
-import type { NextPage } from "next";
 
-type ContactPageProps = {
-  title?: string;
-  subtitle?: string;
-  imageSrc?: string;
-  imageAlt?: string;
-  address?: {
-    street: string;
-    city: string;
-    state: string;
-    zip: string;
-  };
-  phone?: string;
-  email?: string;
-  formTitle?: string;
-  className?: string;
-}
-
-const Contact: NextPage<ContactPageProps> = ({
-  title = "Contact Us",
-  subtitle = "We'd love to hear from you. Get in touch with us for any questions about our programs.",
-  imageSrc = "/contact-image.jpg",
-  imageAlt = "Our Facility",
-  address = {
-    street: "193A Mallory Ave.",
-    city: "Jersey City",
-    state: "NJ",
-    zip: "07304-1288"
-  },
-  phone = "(555) 123-4567",
-  email = "info@evviva.com",
-  formTitle = "Schedule a Tour",
-  className = "min-h-screen bg-gradient-to-b from-sage-50 to-white pt-24",
-}: ContactPageProps) => {
+export default function Contact() {
   useGsapAnimation();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -74,16 +41,17 @@ const Contact: NextPage<ContactPageProps> = ({
   };
 
   return (
-    <div className={className}>
+    <div className="min-h-screen bg-gradient-to-b from-sage-50 to-white pt-24">
       <div className="container mx-auto px-4 py-16">
         
         {/* Header Section */}
         <div className="text-center mb-16 animate-on-scroll">
           <h1 className="text-4xl md:text-5xl font-bold text-sage-800 mb-4">
-            {title}
+            Contact Us
           </h1>
           <p className="text-lg text-sage-600 max-w-2xl mx-auto">
-            {subtitle}
+            We&apos;d love to hear from you. Get in touch with us for any
+            questions about our programs.
           </p>
         </div>
   
@@ -95,8 +63,8 @@ const Contact: NextPage<ContactPageProps> = ({
             
             {/* Image */}
             <Image
-              src={imageSrc}
-              alt={imageAlt}
+              src="/contact-image.jpg"
+              alt="Our Facility"
               width={600}
               height={400}
               className="rounded-lg shadow-lg w-full h-auto mb-8"
@@ -110,8 +78,8 @@ const Contact: NextPage<ContactPageProps> = ({
                   Visit Us
                 </h2>
                 <p className="text-sage-600">
-                  {address.street}<br />
-                  {address.city} {address.state} {address.zip}
+                  193A Mallory Ave.<br />
+                  Jersey City NJ 07304-1288
                 </p>
               </div>
             </div>
@@ -123,7 +91,7 @@ const Contact: NextPage<ContactPageProps> = ({
                 <h2 className="text-xl font-semibold text-sage-800 mb-2">
                   Call Us
                 </h2>
-                <p className="text-sage-600">{phone}</p>
+                <p className="text-sage-600">(555) 123-4567</p>
               </div>
             </div>
   
@@ -134,7 +102,7 @@ const Contact: NextPage<ContactPageProps> = ({
                 <h2 className="text-xl font-semibold text-sage-800 mb-2">
                   Email Us
                 </h2>
-                <p className="text-sage-600">{email}</p>
+                <p className="text-sage-600">info@evviva.com</p>
               </div>
             </div>
           </div>
@@ -142,7 +110,7 @@ const Contact: NextPage<ContactPageProps> = ({
           {/* Form Section */}
           <div className="bg-white p-10 rounded-lg shadow-md border border-sage-200 animate-on-scroll w-full md:max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold text-sage-800 mb-6 text-center md:text-left">
-              {formTitle}
+              Schedule a Tour
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-ACCESS-KEY" />
@@ -235,5 +203,3 @@ const Contact: NextPage<ContactPageProps> = ({
     </div>
   );
 }
-
-export default Contact;
