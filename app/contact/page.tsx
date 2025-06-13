@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/select";
 import { ageRange } from "@/lib/constants";
 
-interface ContactPageProps {
+type ContactPageProps = {
   title?: string;
   subtitle?: string;
   imageSrc?: string;
@@ -36,7 +36,7 @@ interface ContactPageProps {
   className?: string;
 }
 
-export default function Contact({
+const Contact = ({
   title = "Contact Us",
   subtitle = "We'd love to hear from you. Get in touch with us for any questions about our programs.",
   imageSrc = "/contact-image.jpg",
@@ -51,7 +51,7 @@ export default function Contact({
   email = "info@evviva.com",
   formTitle = "Schedule a Tour",
   className = "min-h-screen bg-gradient-to-b from-sage-50 to-white pt-24",
-}: ContactPageProps) {
+}: ContactPageProps) => {
   useGsapAnimation();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -234,3 +234,5 @@ export default function Contact({
     </div>
   );
 }
+
+export default Contact;
