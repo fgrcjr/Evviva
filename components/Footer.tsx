@@ -1,91 +1,111 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
+import { Logo } from "@/components/ui/Logo";
+import { FooterSection } from "@/components/ui/FooterSection";
+import { SocialIcons } from "@/components/ui/SocialIcons";
 
-const Footer = () => {
+interface FooterProps {
+  logoSrc?: string;
+  logoAlt?: string;
+  logoWidth?: number;
+  logoHeight?: number;
+  companyName?: string;
+  address?: string[];
+  phone?: string;
+  email?: string;
+  programLinks?: { href: string; label: string }[];
+  quickLinks?: { href: string; label: string }[];
+  socialLinks?: Array<{
+    Icon: any;
+    label: string;
+    href: string;
+    ariaLabel?: string;
+  }>;
+  copyrightText?: string;
+  className?: string;
+  gridClassName?: string;
+}
+
+const defaultProgramLinks = [
+  { href: "/programs/infants", label: "Infants" },
+  { href: "/programs/toddler", label: "Toddlers" },
+  { href: "/programs/preschool", label: "Preschool" },
+  { href: "/programs/school_age", label: "School Age" },
+];
+
+const defaultQuickLinks = [
+  { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact" },
+  { href: "/faq", label: "FAQ" },
+];
+
+const Footer = ({
+  logoSrc = "/logo.png",
+  logoAlt = "Evviva Montessori",
+  logoWidth = 200,
+  logoHeight = 60,
+  companyName = "Evviva Montessori",
+  address = ["193A Mallory Ave.", "Jersey City NJ 07304-1288"],
+  phone = "(555) 123-4567",
+  email = "info@evviva.com",
+  programLinks = defaultProgramLinks,
+  quickLinks = defaultQuickLinks,
+  socialLinks,
+  copyrightText,
+  className = "bg-sage-50",
+  gridClassName = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-center md:text-left",
+}: FooterProps) => {
+  const currentYear = new Date().getFullYear();
+  const defaultCopyright = `© ${currentYear} ${companyName}. All rights reserved.`;
+
   return (
-    <footer className="bg-sage-50">
+    <footer className={className}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        
         {/* Logo Section */}
         <div className="flex justify-center mb-8">
-          <Image
-            src="/logo.png"
-            alt="Evviva Montessori"
-            width={200}
-            height={60}
+          <Logo
+            href={null}
+            logoSrc={logoSrc}
+            logoAlt={logoAlt}
+            width={logoWidth}
+            height={logoHeight}
             className="mb-4 max-w-[180px] w-auto"
+            fallbackText={companyName}
           />
         </div>
-  
+
         {/* Footer Links Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-center md:text-left">
-          
+        <div className={gridClassName}>
           {/* Programs */}
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Programs</h4>
-            <ul className="space-y-2">
-              {["Infants", "Toddlers", "Preschool", "School Age"].map((item, index) => (
-                <li key={index}>
-                  <Link href={`/programs#${item.toLowerCase()}`} className="text-gray-600 hover:text-sage-600">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-  
+          <FooterSection title="Programs" links={programLinks} />
+
           {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {["About Us", "Contact", "FAQ"].map((item, index) => (
-                <li key={index}>
-                  <Link href={`/${item.toLowerCase().replace(" ", "")}`} className="text-gray-600 hover:text-sage-600">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-  
+          <FooterSection title="Quick Links" links={quickLinks} />
+
           {/* Contact Info */}
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Contact Info</h4>
+          <FooterSection title="Contact Info">
             <ul className="space-y-2 text-gray-600">
-              <li>193A Mallory Ave.</li>
-              <li>Jersey City NJ 07304-1288</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>Email: info@evviva.com</li>
-            </ul>
-          </div>
-  
-          {/* Social Media */}
-          <div>
-            <h4 className="font-semibold text-gray-900 mb-4">Follow Us</h4>
-            <div className="flex justify-center md:justify-start space-x-4">
-              {[
-                { Icon: Facebook, label: "Facebook" },
-                { Icon: Instagram, label: "Instagram" },
-                { Icon: Twitter, label: "Twitter" },
-                { Icon: Linkedin, label: "LinkedIn" },
-                { Icon: Youtube, label: "YouTube" },
-              ].map(({ Icon, label }, index) => (
-                <a key={index} href="#" className="text-gray-600 hover:text-sage-600" aria-label={label}>
-                  <Icon className="h-6 w-6" />
-                </a>
+              {address.map((line, index) => (
+                <li key={index}>{line}</li>
               ))}
-            </div>
-          </div>
+              <li>Phone: {phone}</li>
+              <li>Email: {email}</li>
+            </ul>
+          </FooterSection>
+
+          {/* Social Media */}
+          <FooterSection title="Follow Us">
+            <SocialIcons
+              icons={socialLinks}
+              className="flex justify-center md:justify-start space-x-4"
+            />
+          </FooterSection>
         </div>
-  
+
         {/* Copyright Section */}
         <div className="pt-8 border-t border-gray-200">
           <p className="text-center text-gray-600">
-            © {new Date().getFullYear()} Evviva Montessori. All rights reserved.
+            {copyrightText || defaultCopyright}
           </p>
         </div>
-  
       </div>
     </footer>
   );
