@@ -21,7 +21,7 @@ interface ContactPageProps {
   className?: string;
 }
 
-export default function Contact({
+const Contact: React.FC<ContactPageProps> = ({
   title = "Contact Us",
   subtitle = "We'd love to hear from you. Get in touch with us for any questions about our programs.",
   imageSrc = "/contact-image.jpg",
@@ -29,7 +29,7 @@ export default function Contact({
   contactItems,
   formTitle = "Schedule a Tour",
   className = "min-h-screen bg-gradient-to-b from-sage-50 to-white pt-24",
-}: ContactPageProps) {
+}) => {
   useGsapAnimation();
 
   return (
@@ -67,4 +67,6 @@ export default function Contact({
       </div>
     </div>
   );
-}
+};
+
+export default Contact;
